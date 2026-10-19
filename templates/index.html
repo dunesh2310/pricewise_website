@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PriceWise | Smart Price Comparison</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="navbar">
+        <a href="/" class="logo">
+            <span class="logo-icon">↘</span>
+            Price<span>Wise</span>
+        </a>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            SMART SHOPPING
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="badge">✦ YOUR PERSONAL PRICE FINDER</div>
+
+            <h1>
+                Find It. Compare It.<br>
+                <span>Pay Less.</span>
+            </h1>
+
+            <p class="subtitle">
+                Search your favourite shopping websites
+                and find the best available deal.
+            </p>
+
+            <div class="store-pills">
+                <span class="amazon">Amazon</span>
+                <span class="flipkart">Flipkart</span>
+                <span class="myntra">Myntra</span>
+                <span class="meesho">Meesho</span>
+            </div>
+        </section>
+
+        <section class="search-card">
+            <div class="section-heading">
+                <span class="step">01</span>
+                <h2>Find Your Product</h2>
+            </div>
+
+            <form id="searchForm">
+                <label for="productInput">
+                    PRODUCT NAME OR PRODUCT URL
+                </label>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="productInput"
+                        placeholder="Enter product name or paste URL..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit" id="searchButton">
+                        Compare Prices <span>↗</span>
+                    </button>
+                </div>
+
+                <p class="input-help">
+                    Paste a product link or enter the product name.
+                </p>
+            </form>
+
+            <div class="divider">
+                <span>OR UPLOAD PRODUCT IMAGE</span>
+            </div>
+
+            <label class="upload-box" for="imageInput">
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    hidden
+                >
+
+                <div class="upload-icon">↑</div>
+
+                <div class="upload-text">
+                    <strong>Upload your product image</strong>
+                    <p>Click here to select an image</p>
+                    <small>PNG, JPG, WEBP · Maximum 8 MB</small>
+                </div>
+
+                <img
+                    id="imagePreview"
+                    alt="Product preview"
+                    hidden
+                >
+            </label>
+
+            <p class="image-note">
+                Image upload currently previews the product image.
+                Enter its name above to search shopping websites.
+                Automatic image recognition requires an additional service.
+            </p>
+        </section>
+
+        <section class="results-section" id="resultsSection" hidden>
+            <div class="section-heading">
+                <span class="step">02</span>
+                <h2>Available Shopping Stores</h2>
+            </div>
+
+            <p id="resultMessage" class="result-message"></p>
+
+            <div id="resultsGrid" class="results-grid"></div>
+
+            <div class="notice">
+                <strong>ⓘ Price comparison notice</strong>
+
+                <p>
+                    These links open store search results.
+                    Check the current price, product model, seller,
+                    delivery charges and coupons before buying.
+                    Prices are not automatically retrieved by this version.
+                </p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="section-label">HOW IT WORKS</div>
+
+            <h2>
+                Shop Smarter. <span>Save More.</span>
+            </h2>
+
+            <div class="feature-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">⌕</div>
+                    <h3>Search Products</h3>
+                    <p>Enter a product name or URL.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">⇄</div>
+                    <h3>Compare Stores</h3>
+                    <p>Open matching store search results.</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">₹</div>
+                    <h3>Save Money</h3>
+                    <p>Compare final prices before purchasing.</p>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            PRICEWISE · SMART SHOPPING MADE SIMPLE
+        </footer>
+    </main>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
