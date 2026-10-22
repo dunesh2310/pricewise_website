@@ -730,8 +730,6 @@ footer {
         font-size: 21px;
     }
 }
-
-
 /* ==================================
    PRICEWISE VERTICAL PRODUCT CARDS
 ================================== */
@@ -809,17 +807,18 @@ footer {
     margin-bottom: 10px;
 }
 .product-name {
-    display: block;
     width: 100%;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
-    line-height: 1.4;
-    max-height: 2.8em;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    overflow-wrap: break-word;
-   
-    margin-bottom: 8px;
 }
 .product-description {
     width: 100%;
@@ -958,4 +957,96 @@ footer {
     .product-current-price {
         font-size: 25px;
     }
+}
+
+/* Highlight the cheapest product card */
+.cheapest-product {
+    border: 2px solid #16a34a !important;
+    position: relative;
+}
+.cheapest-badge {
+    background: #16a34a;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 8px 8px 0 0;
+}
+.cheapest-message {
+    color: #16a34a;
+    font-weight: 600;
+    margin: 12px 0;
+}
+/* Separate cheapest product summary */
+.lowest-price-summary {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #101c17;
+    border: 2px solid #22c55e;
+    border-radius: 16px;
+    color: white;
+}
+.summary-icon {
+    font-size: 42px;
+    margin-bottom: 8px;
+}
+.summary-label {
+    color: #4ade80;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.lowest-price-summary h2 {
+    margin: 10px 0;
+    font-size: 26px;
+}
+.summary-product-name {
+    font-size: 20px;
+    margin: 15px 0;
+}
+.summary-price {
+    color: #4ade80;
+    font-size: 36px;
+    font-weight: 800;
+    margin: 12px 0;
+}
+.summary-store {
+    font-size: 16px;
+}
+.summary-note {
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-top: 15px;
+}
+@media (max-width: 600px) {
+    .lowest-price-summary {
+        padding: 22px 12px;
+    }
+    .lowest-price-summary h2 {
+        font-size: 22px;
+    }
+    .summary-price {
+        font-size: 30px;
+    }
+}
+
+.buy-now-button {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 14px 36px;
+    background: #22c55e;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.buy-now-button:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
 }
